@@ -11,18 +11,27 @@ jobs:
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Setup .NET 8
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '8.0.x'
 
-    - name: Publish WinForms App
-      run: dotnet publish "SSH Tunnel Manager/SSH Tunnel Manager.csproj" --configuration Release -r win-x64 --self-contained false --output ./publish
+    - name: Publish WinForms App (x64)
+      run: dotnet publish "SSH Tunnel Manager/SSH Tunnel Manager.csproj" --configuration Release -r win-x64 --self-contained false --output ./publish-x64
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
+    - name: Publish WinForms App (arm64)
+      run: dotnet publish "SSH Tunnel Manager/SSH Tunnel Manager.csproj" --configuration Release -r win-arm64 --self-contained false --output ./publish-arm64
+
+    - name: Upload Artifact (x64)
+      uses: actions/upload-artifact@v5
       with:
-        name: SSHTunnelManager-App-Release
-        path: ./publish
+        name: SSHTunnelManager-x86
+        path: ./publish-x64
+        
+    - name: Upload Artifact (arm64)
+      uses: actions/upload-artifact@v5
+      with:
+        name: SSHTunnelManager-arm86
+        path: ./publish-arm64
