@@ -56,8 +56,11 @@ namespace SSH_Tunnel_Manager
                 }
             }
 
-            tunnelList.Columns["Enable"].Width = 100;
-            tunnelList.Columns["Host"].Width = 200;
+            double scaleFactor = this.DeviceDpi / 96.0;
+            tunnelList.Columns["Enable"].Width = (int)(50 * scaleFactor);
+            tunnelList.Columns["Host"].Width = (int)(100 * scaleFactor);
+            tunnelList.Columns["LocalPort"].Width = (int)(90 * scaleFactor);
+            tunnelList.Columns["RemotePort"].Width = (int)(100 * scaleFactor);
             tunnelList.Columns["LocalPort"].HeaderText = "Local Port";
             tunnelList.Columns["RemotePort"].HeaderText = "Remote Port";
             tunnelList.Columns["Label"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -69,7 +72,7 @@ namespace SSH_Tunnel_Manager
                 HeaderText = "Delete",
                 Text = "Delete",
                 UseColumnTextForButtonValue = true,
-                Width = 120
+                Width = (int)(70 * scaleFactor)
             };
             tunnelList.Columns.Add(deleteColumn);
 

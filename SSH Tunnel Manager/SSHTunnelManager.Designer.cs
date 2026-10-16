@@ -46,13 +46,15 @@
             tunnelList.AllowUserToDeleteRows = false;
             tunnelList.AllowUserToResizeRows = false;
             tunnelList.BackgroundColor = SystemColors.Control;
+            tunnelList.BorderStyle = BorderStyle.Fixed3D;
             tunnelList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tunnelList.EditMode = DataGridViewEditMode.EditOnEnter;
-            tunnelList.Location = new Point(12, 128);
+            tunnelList.Location = new Point(6, 60);
+            tunnelList.Margin = new Padding(2, 1, 2, 1);
             tunnelList.Name = "tunnelList";
             tunnelList.RowHeadersVisible = false;
             tunnelList.RowHeadersWidth = 82;
-            tunnelList.Size = new Size(1148, 558);
+            tunnelList.Size = new Size(618, 262);
             tunnelList.TabIndex = 0;
             tunnelList.CellClick += tunnelList_CellClick;
             tunnelList.CurrentCellDirtyStateChanged += tunnelList_CurrentCellDirtyStateChanged;
@@ -60,9 +62,10 @@
             // 
             // addConnection
             // 
-            addConnection.Location = new Point(12, 692);
+            addConnection.Location = new Point(6, 324);
+            addConnection.Margin = new Padding(2, 1, 2, 1);
             addConnection.Name = "addConnection";
-            addConnection.Size = new Size(1148, 46);
+            addConnection.Size = new Size(618, 22);
             addConnection.TabIndex = 5;
             addConnection.Text = "Add Connection";
             addConnection.UseVisualStyleBackColor = true;
@@ -75,18 +78,21 @@
             sshGroupBox.Controls.Add(hostLabel);
             sshGroupBox.Controls.Add(usernameBox);
             sshGroupBox.Controls.Add(hostBox);
-            sshGroupBox.Location = new Point(12, 12);
+            sshGroupBox.Location = new Point(6, 6);
+            sshGroupBox.Margin = new Padding(2, 1, 2, 1);
             sshGroupBox.Name = "sshGroupBox";
-            sshGroupBox.Size = new Size(1148, 99);
+            sshGroupBox.Padding = new Padding(2, 1, 2, 1);
+            sshGroupBox.Size = new Size(618, 46);
             sshGroupBox.TabIndex = 2;
             sshGroupBox.TabStop = false;
             sshGroupBox.Text = "SSH Connection";
             // 
             // connectButton
             // 
-            connectButton.Location = new Point(630, 39);
+            connectButton.Location = new Point(339, 18);
+            connectButton.Margin = new Padding(2, 1, 2, 1);
             connectButton.Name = "connectButton";
-            connectButton.Size = new Size(512, 46);
+            connectButton.Size = new Size(276, 22);
             connectButton.TabIndex = 0;
             connectButton.Text = "Connect";
             connectButton.UseVisualStyleBackColor = true;
@@ -95,44 +101,49 @@
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
-            usernameLabel.Location = new Point(297, 45);
+            usernameLabel.Location = new Point(160, 21);
+            usernameLabel.Margin = new Padding(2, 0, 2, 0);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(121, 32);
+            usernameLabel.Size = new Size(60, 15);
             usernameLabel.TabIndex = 3;
             usernameLabel.Text = "Username";
             // 
             // hostLabel
             // 
             hostLabel.AutoSize = true;
-            hostLabel.Location = new Point(17, 45);
+            hostLabel.Location = new Point(9, 21);
+            hostLabel.Margin = new Padding(2, 0, 2, 0);
             hostLabel.Name = "hostLabel";
-            hostLabel.Size = new Size(63, 32);
+            hostLabel.Size = new Size(32, 15);
             hostLabel.TabIndex = 2;
             hostLabel.Text = "Host";
             // 
             // usernameBox
             // 
-            usernameBox.Location = new Point(424, 43);
+            usernameBox.Location = new Point(228, 20);
+            usernameBox.Margin = new Padding(2, 1, 2, 1);
             usernameBox.Name = "usernameBox";
-            usernameBox.Size = new Size(200, 39);
+            usernameBox.Size = new Size(110, 23);
             usernameBox.TabIndex = 2;
             // 
             // hostBox
             // 
-            hostBox.Location = new Point(86, 43);
+            hostBox.Location = new Point(46, 20);
+            hostBox.Margin = new Padding(2, 1, 2, 1);
             hostBox.Name = "hostBox";
-            hostBox.Size = new Size(200, 39);
+            hostBox.Size = new Size(110, 23);
             hostBox.TabIndex = 1;
             // 
             // SSHTunnelManager
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1172, 750);
+            ClientSize = new Size(631, 352);
             Controls.Add(sshGroupBox);
             Controls.Add(addConnection);
             Controls.Add(tunnelList);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2, 1, 2, 1);
             MaximizeBox = false;
             Name = "SSHTunnelManager";
             StartPosition = FormStartPosition.CenterScreen;
